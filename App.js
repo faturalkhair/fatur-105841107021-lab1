@@ -1,15 +1,40 @@
-import { StyleSheet, Text, View} from 'react-native'
+import { StyleSheet, Text, View, Image} from 'react-native'
 import React from 'react'
 
 
 const App = () => {
   return (
+
     <View style={{flex:1}}>
+      <View style={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40
+      }}>
+        <Text style={{
+          fontSize: 20,
+          fontWeight: 'bold'
+        }}>
+          KORUPSI KOLUSI NEPOTISME
+        </Text>
+      </View>
+
+      <View style={{
+        alignItems: 'center',
+        marginTop: 70
+      }}>
+        <Image source={require('./assets/meme.jpg')}
+        style={{
+          width: 300,
+          height: 300
+        }}/>
+      </View>
+
       <View style={{
         flex:1, flexDirection: "row",
         alignItems: 'flex-end',
         justifyContent: 'center',
-        marginBottom: 20
+        marginBottom: 30
       }}>
 
     <View style={{
