@@ -1,43 +1,38 @@
-import { StyleSheet, Text, View, Image} from "react-native"
+import { StyleSheet, Text, View, Image, TextInput} from "react-native"
 import React from "react"
-import ButtonCostum from "./component/button/button"
-const App = () => {
-  return (
-    <View style={{flex:1}}>
-      <View style={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginTop: 40
-      }}>
-        <Text style={{
-          fontSize: 20,
-          fontWeight: 'bold'
-        }}>
-          KORUPSI KOLUSI NEPOTISME
-        </Text>
-      </View>
-
-      <View style={{
-        alignItems: 'center',
-        marginTop: 70
-      }}>
-        <Image source={require('./assets/meme.jpg')}
-        style={{
-          width: 300,
-          height: 300
-        }}/>
-      </View>
-
-      <View style={{
-        flex:1, flexDirection: "row",
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-        marginBottom: 30,
-      }}>
-        <ButtonCostum color='red' text='LOGIN'/>
-        <ButtonCostum color='blue' text='LOGOUT'/>
  
-      </View>
+const App = () => {
+  const TextInputCustom =({name, color}) =>{
+    return(
+      <TextInput
+      placeholder={`Masukkan ${name}`}
+      style={{
+        height: 40,
+        width: 200,
+        borderColor: 'green',
+        borderWidth: 2,
+        padding: 10,
+        margin: 10,
+        borderRadius: 10,
+        color: color,
+      }}
+    />
+
+    )
+  }
+  return (
+    <View style={{
+      flex:1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+
+    <TextInputCustom name="Nama Nenek" color="red"/>
+    <TextInputCustom name="Nama Pak RT" color="yellow"/>
+ 
+
+
+
     </View>
 
   )
