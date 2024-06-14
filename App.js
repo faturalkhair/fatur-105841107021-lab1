@@ -27,8 +27,8 @@ const App = () => {
       alignItems: 'center',
     }}>
 
-    <TextInputCustom name="Nama Nenek" color="red"/>
-    <TextInputCustom name="Nama Pak RT" color="yellow"/>
+    <TextInputCustom name="Username" color="red"/>
+    <TextInputCustom name="Password" color="yellow"/>
  
 
 
