@@ -19,7 +19,7 @@ const App = () => {
         width: 343,
         height: 64,
         borderRadius: 4,
- 
+
       }}
       placeholder={email}
       />
@@ -50,6 +50,7 @@ const App = () => {
         <View style={{
           marginTop: 40,
           marginBottom: 10,
+          marginLeft: 15
  
  
       }}>
@@ -71,8 +72,8 @@ const App = () => {
         padding: 16,
         borderRadius: 20,
         alignItems: 'center',
-        marginTop: 50,
-        marginBottom: 50
+        marginTop: 100,
+
  
       }}>
         <Text style={{
