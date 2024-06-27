@@ -2,26 +2,14 @@ import { StyleSheet, Text, View, Image, TextInput} from "react-native"
 import React from "react"
  
 const App = () => {
-  const TextInputCustom= ({name, email, password, color}) => {
+  const TextInputCustom= ({email, password, color}) => {
     return (
       <View style={{
         alignItems: 'center',
         justifyContent: 'center'
       }}>
-      <TextInput
-      style={{
-        backgroundColor: 'white',
-        padding: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 5,
-        width: 343,
-        height: 64,
-        borderRadius: 4,
- 
-      }}
-      placeholder={name}/>
- 
+
+  
       
 
     <TextInput
@@ -34,6 +22,7 @@ const App = () => {
         width: 343,
         height: 64,
         borderRadius: 4,
+        color: color,
       }}
       placeholder={email}
       />
@@ -49,7 +38,7 @@ const App = () => {
         height: 64,
         borderRadius: 4,
         color: color,
-       }}
+      }}
       placeholder={password}
       />
 
@@ -78,12 +67,11 @@ const App = () => {
           marginBottom: 24,
           marginTop: 54
         }}>
-          SignUp
+          Login
         </Text>        
 
-        <TextInputCustom name="Name" email={"Email"} password={"Password"}/> 
-        {/* <TextInputCustom email="Email" color="gray"/> 
-        <TextInputCustom password="Password" color="gray"/>  */}
+        {/* <TextInputCustom email="Email" color="gray"/>  */}
+        <TextInputCustom password="Password" email={"Email"} color="gray"/> 
 
 
       <View style={{
@@ -96,7 +84,7 @@ const App = () => {
           textAlign: 'right',
           fontSize: 14
         }}>
-          Already have an account?
+          Forgot your password?
         </Text>
       </View>    
 
@@ -115,7 +103,7 @@ const App = () => {
           fontWeight: 'bold',
           color: '#fff'
         }}>
-          SIGN UP
+          LOGIN
         </Text>
       </View>
 
@@ -126,7 +114,7 @@ const App = () => {
           marginBottom: 16,
           fontSize: 14,
         }}>
-          Or sign up with social account
+          Or login with social account
         </Text>
       </View>  
 
@@ -166,7 +154,9 @@ const App = () => {
         }}/>
       </View>
       </View>
-      
+
+
+
       </View>
     </View>
 
