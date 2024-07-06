@@ -1,81 +1,30 @@
 import { StyleSheet, Text, View, Image, TextInput} from "react-native"
 import React from "react"
 import { useFonts } from 'expo-font'
-  
-const App = () => { 
-
-  const TextInputCustom= ({name, email, password, color}) => {
-    return (
-      <View style={{
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}>
-      <TextInput
-      style={{
-        backgroundColor: 'white',
-        padding: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 5,
-        width: 343,
-        height: 64,
-        borderRadius: 4,
-        fontFamily: 'MetroMedium'
-      }}
-      placeholder={name}/>
- 
       
-
-    <TextInput
-      style={{
-        backgroundColor: 'white',
-        padding: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 5,
-        width: 343,
-        height: 64,
-        borderRadius: 4,
-        fontFamily: 'MetroMedium'
-      }}
-      placeholder={email}
-      />
-
-    <TextInput
-      style={{
-        backgroundColor: 'white',
-        padding: 20,
-        alignItems: 'center',
-        justifyContent: 'center',
-        margin: 5,
-        width: 343,
-        height: 64,
-        borderRadius: 4,
-        color: color,
-        fontFamily: 'MetroMedium'
-       }}
-      placeholder={password}
-      />
-
-    </View>
-      
-    )
-  }
-
-  const ButtonCUstom =({color, text}) => {
-    return(
+const App = () => {
+  const[dapatFont] = useFonts({
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+  });
+   if (!dapatFont) {
+     return <Text> ndada font kanda..</Text>
+   }
+const ButtonCUstom =({text}) => {
+  return(
       <View style={{
         borderRadius: 20,
-        marginTop: 50,
         alignItems: 'center',
         backgroundColor: '#DB3022',
-        padding: 16
+        padding: 16,
+        marginBottom: 80,
+        marginTop: 30
       }}>
-        <Text style={{
-          fontSize: 14,
-          fontWeight: 'bold',
-          fontFamily: 'MetroBold',
-          color: '#fff'
+      <Text style={{
+        fontSize: 14,
+        // fontWeight: 'bold',
+        color: '#fff',
+        fontFamily: 'MetroBold'
 
         }}>
           {text}
@@ -84,7 +33,54 @@ const App = () => {
     )
   }
   
+  
 
+    const TextInputCustom= ({email, password, color}) => {
+      return (
+        <View style={{
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}>
+  
+      <TextInput
+        style={{
+          backgroundColor: 'white',
+          padding: 20,
+          alignItems: 'center',
+          justifyContent: 'center',
+          margin: 5,
+          width: 343,
+          height: 64,
+          borderRadius: 4,
+          color: color,
+          fontFamily: 'MetroMedium'
+        }}
+        placeholder={email}
+        />
+  
+      <TextInput
+        style={{
+          backgroundColor: 'white',
+          padding: 20,
+          alignItems: 'center',
+          justifyContent: 'center',
+          margin: 5,
+          width: 343,
+          height: 64,
+          borderRadius: 4,
+          color: color,
+          fontFamily: 'MetroMedium'
+        }}
+        placeholder={password}
+        />
+  
+      </View>
+        
+      )
+    }
+  
+  
+  
   return (
     <View style={{
       flex:1,
@@ -98,42 +94,43 @@ const App = () => {
           fontSize: 32,
           padding: 16,
           fontWeight: 'bold',
-          fontFamily: 'MetroBold',
+          fontFamily: 'MetroMedium',
           marginBottom: 24,
           marginTop: 54
         }}>
-          SignUp
+          Login
         </Text>        
 
-        <TextInputCustom name="Name" email={"Email"} password={"Password"}/> 
-         
+         <TextInputCustom password="Password" email={"Email"} color="gray"/> 
+
 
       <View style={{
         marginTop: 20,
-        marginBottom: 10,
-        marginRight: 100
- 
+        marginBottom: 20,
+        marginRight: 50
+        
       }}>
         <Text style={{
           textAlign: 'right',
           fontSize: 14,
-          fontFamily: 'MetroMedium',
+          fontFamily: 'MetroMedium'
         }}>
-          Already have an account?
+          Forgot your password? 
         </Text>
       </View>    
 
-      <ButtonCUstom text= "SIGN UP" color='#fff'/>
+
+      <ButtonCUstom text= "LOGIN" color='#fff'/>
 
       <View>
         <Text style={{
           textAlign: 'center', 
           marginBottom: 16,
           fontSize: 14,
-          marginTop: 100,
-          fontFamily: 'MetroMedium',
+          marginTop: 50,
+          fontFamily: 'MetroMedium'
         }}>
-          Or sign up with social account
+          Or login with social account
         </Text>
       </View>  
 
@@ -163,7 +160,7 @@ const App = () => {
         backgroundColor: 'white', width: 92, height: 64, borderRadius: 24,
         alignItems: 'center',
         justifyContent: 'center'
-        }}>
+      }}>
         <Image source={require('./assets/fb.png')}
         style={{
           width: 50,
@@ -173,13 +170,14 @@ const App = () => {
         }}/>
       </View>
       </View>
-      
+
+
+
       </View>
     </View>
 
- 
-  )
+
+)
 
 }
-export default App
-
+export default App;

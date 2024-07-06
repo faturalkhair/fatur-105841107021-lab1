@@ -1,8 +1,16 @@
-import { StyleSheet, Text, View, Image, TextInput} from "react-native"
+import { StyleSheet, Text, View,TextInput} from "react-native"
 import React from "react"
+import { useFonts } from "expo-font";
 
 const App = () => {
-  const TextInputCustom= ({name, email, password, color}) => {
+  const[dapatFont] = useFonts({
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+  });
+   if (!dapatFont) {
+     return <Text> ndada font kanda..</Text>
+   }
+  const TextInputCustom= ({email}) => {
     return (
       <View style={{
         alignItems: 'center',
@@ -19,6 +27,7 @@ const App = () => {
         width: 343,
         height: 64,
         borderRadius: 4,
+        fontFamily: 'MetroMedium'
 
       }}
       placeholder={email}
@@ -26,6 +35,27 @@ const App = () => {
 
     </View>
       
+    )
+  }
+  const ButtonCustom =({color, text}) => {
+    return(
+      <View style={{
+        borderRadius: 20,
+        marginTop: 60,
+        alignItems: 'center',
+        backgroundColor: '#DB3022',
+        padding: 16
+      }}>
+        <Text style={{
+          fontSize: 14,
+          fontWeight: 'bold',
+          color: '#fff',
+          fontFamily: 'MetroMedium'
+
+        }}>
+          {text}
+        </Text>
+      </View>
     )
   }
   
@@ -40,7 +70,8 @@ const App = () => {
         <Text style={{
           fontSize: 32,
           padding: 16,
-          fontWeight: 'bold',
+          // fontWeight: 'bold',
+          fontFamily: 'MetroBold',
           marginBottom: 24,
           marginTop: 54
         }}>
@@ -55,7 +86,8 @@ const App = () => {
  
       }}>
         <Text style={{
-          fontSize: 14
+          fontSize: 14,
+          fontFamily: 'MetroMedium',
         }}>
           Please enter your email address. You will receive  
           a link to create a new password via email.
@@ -64,27 +96,8 @@ const App = () => {
       </View>
 
         <TextInputCustom   email={"Email"}/>  
-
-
-       
-      <View style={{
-        backgroundColor: '#DB3022',
-        padding: 16,
-        borderRadius: 20,
-        alignItems: 'center',
-        marginTop: 100,
-
+        <ButtonCustom text= "SEND" color='#fff'/>
  
-      }}>
-        <Text style={{
-          fontSize: 14,
-          fontWeight: 'bold',
-          color: '#fff'
-        }}>
-          SEND
-        </Text>
-      </View>
-
       </View>
     </View>
 
