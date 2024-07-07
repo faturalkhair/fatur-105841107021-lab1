@@ -3,7 +3,13 @@ import React from "react"
 import { useFonts } from 'expo-font'
   
 const App = () => { 
-
+  const[dapatFont] = useFonts({
+    'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
+    'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
+  });
+   if (!dapatFont) {
+     return <Text> ndada font kanda..</Text>
+   }
   const TextInputCustom= ({name, email, password, color}) => {
     return (
       <View style={{
