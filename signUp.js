@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image, TextInput} from "react-native"
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from "react-native"
 import React from "react"
 import { useFonts } from 'expo-font'
   
-const App = () => { 
+const App = ( {navigation}) => { 
   const[dapatFont] = useFonts({
     'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
     'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
@@ -120,6 +120,7 @@ const App = () => {
         marginRight: 100
  
       }}>
+      <TouchableOpacity onPress={() => navigation.navigate('LoginPage')}>
         <Text style={{
           textAlign: 'right',
           fontSize: 14,
@@ -127,6 +128,7 @@ const App = () => {
         }}>
           Already have an account?
         </Text>
+        </TouchableOpacity>
       </View>    
 
       <ButtonCUstom text= "SIGN UP" color='#fff'/>

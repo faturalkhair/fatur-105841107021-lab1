@@ -1,8 +1,8 @@
-import { StyleSheet, Text, View, Image, TextInput} from "react-native"
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from "react-native"
 import React from "react"
 import { useFonts } from 'expo-font'
       
-const App = () => {
+const App = ( {navigation}) => {
   const[dapatFont] = useFonts({
     'MetroBold': require('./assets/fonts/Metropolis-Bold.otf'),
     'MetroMedium': require('./assets/fonts/Metropolis-Medium.otf'),
@@ -110,6 +110,8 @@ const ButtonCUstom =({text}) => {
         marginRight: 50
         
       }}>
+
+        <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
         <Text style={{
           textAlign: 'right',
           fontSize: 14,
@@ -117,6 +119,7 @@ const ButtonCUstom =({text}) => {
         }}>
           Forgot your password? 
         </Text>
+        </TouchableOpacity>
       </View>    
 
 
